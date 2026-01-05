@@ -15,7 +15,7 @@ This project proposes a hybrid recommendation framework that integrates:
 to generate accurate and personalized game recommendations.
 
 ## System Architecture
-![System Architecture](figures/architecture.png)
+![System Architecture](figures/hybrid.png)
 
 ## Methodology
 The system consists of three complementary modules:
