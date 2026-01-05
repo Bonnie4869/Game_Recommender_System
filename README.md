@@ -1,6 +1,40 @@
-# Hybrid Game Recommendation System
+# Steam Game Recommendation System
 
-An improved hybrid recommendation system for Steam games, combining content-based filtering, collaborative filtering (SVD), and game rating/popularity scoring.
+A hybrid machine learning system for personalized game recommendation on the Steam platform,
+combining collaborative filtering, content-based filtering, and sentiment-aware quality modeling.
+
+## Overview
+With the rapid growth of games on Steam, users often face difficulties discovering titles
+that truly match their preferences. Traditional recommendation approaches based on popularity
+or simple tags fail to capture semantic content and user sentiment.
+
+This project proposes a hybrid recommendation framework that integrates:
+- user behavior (playtime),
+- semantic game content,
+- community review sentiment,
+to generate accurate and personalized game recommendations.
+
+## System Architecture
+![System Architecture](figures/architecture.png)
+
+## Methodology
+The system consists of three complementary modules:
+
+- **Sentiment-Aware Quality Model**
+  - Uses VADER to analyze user review sentiment
+  - Combines sentiment score with overall rating to estimate game quality
+
+- **Content-Based Filtering**
+  - Sentence-BERT (SBERT) for semantic embedding of game descriptions
+  - TruncatedSVD and K-Means for dimensionality reduction and clustering
+  - Cosine similarity for content-based recommendation
+
+- **Collaborative Filtering**
+  - Implicit feedback modeling using user playtime
+  - Matrix factorization via Singular Value Decomposition (SVD)
+
+The final recommendation score is generated through a weighted fusion strategy
+that balances relevance, diversity, and quality.
 
 ## Features
 - **Content-based filtering** – Recommends games similar to those a user has played
